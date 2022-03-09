@@ -1,7 +1,5 @@
-FROM node:12-alpine
-RUN apk add --no-cache python2 g++ make
-WORKDIR /app
+FROM docker.io/library/maven:3.6.1-jdk-11
 COPY . .
-RUN yarn install --production
-CMD ["node", "src/index.js"]
-EXPOSE 3000
+RUN mvn clean verify
+RUN chmod 777 /target/credit-service-0.0.1-SNAPSHOT.jar
+CMD ["java","-jar","target/credit-service-0.0.1-SNAPSHOT.jar"]
