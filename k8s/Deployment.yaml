@@ -16,4 +16,4 @@ spec:
     spec:
       containers:
       - name: account-service
-        image: quay.io/raj11222021/account-service:latest
+        image: quay.io/babaleshwarsagar/account-service:latest
